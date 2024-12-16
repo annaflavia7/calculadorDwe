@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <form action="#">
+                <fieldset>
+                    <legend>
+                        Calculadora Airbnb
+                    </legend>
+                    <p>
+                        <label for="preco">Preço</label>
+                        <input type="number" id="preco">
+                    </p>
+                    <p>
+                        <label for="qtdDiaria">Diaria</label>
+                        <input type="number" id="qtdDiaria">
+                    </p>
+                    <p>
+                        <label for="taxalimpeza">Limpeza</label>
+                        <input type="number" id="taxalimpeza">
+                    </p>
+                    <p>
+                        <input type="button" value="Enviar" id="btnenviar">
+                        <input type="reset" value="Limpar" id="btnlimpar">
+                    </p>
+                </fieldset>
+            </form>
+        </section>
+        <div id="mensagem"></div>
+    </main>
+
+    <script>
+        let btnenviar = document.getElementById("btnenviar")
+        btnenviar.addEventListener("click", function (e) {
+            let preco = document.getElementById("preco").value;
+            let taxalimpeza = document.getElementById("taxalimpeza").value;
+            let qtdDiaria = document.getElementById("qtdDiaria").value;
+            let valor = preco*qtdDiaria+parseFloat(taxalimpeza);
+            console.log(valor);
+            console.log(preco, qtdDiaria, taxalimpeza);
+            let mensagem = document.getElementById("mensagem");
+            mensagem.innerHTML = "Sua hospedagem custará R$" +valor;
+           
+        });
+    </script>
+
+</body>
+
+</html>
